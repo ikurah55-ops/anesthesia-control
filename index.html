@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b1013">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Anesthesia Control</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="麻酔シム">
+  <script type="module" crossorigin src="./assets/index-ghxFeSMi.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DkWydwhX.css">
+</head>
+<body>
+<div id="app">
+  <section class="or" id="orBox" aria-label="手術室">
+    <canvas id="orCanvas"></canvas>
+    <canvas id="gaugeCanvas" class="gauges" hidden aria-label="体の中の状態のゲージ"></canvas>
+    <canvas id="recordCanvas" class="gauges" hidden aria-label="麻酔記録"></canvas>
+    <div class="hud">
+      <div class="hud-l">
+        <span class="stage-pill" id="stagePill">導入</span>
+        <span class="hud-clock"><b id="clock">0:00</b><small id="remain"></small></span>
+      </div>
+      <div class="hud-r">
+        <span class="chip score" id="liveScore" title="目標範囲内にいた割合" hidden></span>
+        <button class="chip view" id="btnView" hidden title="手術室とメーター画面を切り替え（V キー）">メーター</button>
+        <button class="chip" id="btnRecord" title="麻酔記録を見る（R キー）">記録</button>
+        <button class="chip" id="btnSpeed" title="ゲーム速度（タップで切り替え・×2 は手術中のみ）">×1</button>
+        <button class="chip" id="btnSound" aria-pressed="false">音</button>
+        <button class="chip" id="btnPause" aria-label="一時停止">II</button>
+      </div>
+    </div>
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+    <div class="banner" id="banner" hidden></div>
+    <div class="pop" id="pop" hidden></div>
+    <div class="mg" id="mg" hidden></div>
+    <div class="vignette" id="vignette"></div>
+  </section>
+  <aside class="side">
+    <div class="monitor" id="monBox" title="タップで拡大"><canvas id="monCanvas"></canvas></div>
+    <div class="tray" id="tray" aria-label="薬剤トレイ"></div>
+  </aside>
+  <footer class="lane" id="lane">
+    <div class="lane-ctrl" id="laneCtrl"></div>
+    <canvas id="laneCanvas"></canvas>
+  </footer>
+</div>
+
+<div class="ov" id="ovMon" hidden><div class="mon-big"><canvas id="monBig"></canvas><div class="mon-info" id="monInfo" hidden></div></div><p class="ov-hint">数値をタップで正常範囲 ・ それ以外をタップで閉じる</p></div>
+<div class="ov" id="ovCard" hidden><div class="card" id="card"></div></div>
+<div class="tip" id="tip" hidden></div>
+</body>
+</html>

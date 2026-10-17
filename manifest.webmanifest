@@ -1,0 +1,17 @@
+{
+  "name": "Anesthesia Control",
+  "short_name": "麻酔シム",
+  "description": "麻酔科医として1人の患者を導入・手術・抜管まで管理するゲーム（試作版）",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b1013",
+  "theme_color": "#0b1013",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
